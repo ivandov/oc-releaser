@@ -1,0 +1,25 @@
+language: python
+
+branches:
+  only:
+  - main
+
+env:
+  - NODE_VERSION="12"
+
+before_install:
+  - env
+  - nvm install $NODE_VERSION
+
+install:
+  - npm install -g release-it
+  - npm install -g @release-it/conventional-changelog
+  - pip install ansible-core
+  - sudo wget "https://github.com/mikefarah/yq/releases/download/v4.9.6/yq_linux_amd64" -O /usr/bin/yq
+  - sudo chmod +x /usr/bin/yq
+
+script:
+  - git remote rm origin
+  - git remote add origin https://${GITHUB_TOKEN}@github.ibm.com/${TRAVIS_REPO_SLUG}.git
+  - git symbolic-ref HEAD "refs/heads/${TRAVIS_BRANCH}"
+  - release-it
