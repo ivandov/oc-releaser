@@ -1,46 +1,18 @@
 hooks:
-  after:bump:
-    # set fields based on repo.owner value
-    - yq eval -i '.namespace = "${repo.owner}"' galaxy.yml
-    - yq eval -i '.domain = "${repo.owner}"' operator-config.yaml
-    # set fields based on repo.project value
-    - yq eval -i '.name = "${repo.project}"' galaxy.yml
-    - yq eval -i '.name = "${repo.project}"' operator-config.yaml
-    # Set fields based on bumped version value
-    - yq eval -i '.version = "${version}"' galaxy.yml
-    - yq eval -i '.version = "${version}"' operator-config.yaml
-    # Perform common build / update steps
-    - ansible-galaxy collection build --output-path ./dist -f
-    - echo Successfully built ansible-collection
-  before:github:release:
-    - echo Pushing modifications to tag ${version} only
-    - git tag ${version} -f
-    - git commit -am "Release v${version}"
-    - git push origin ${version} -f
-  after:github:release:
-    - echo Resetting local tag commit created by release-it
-    - git reset --hard HEAD~1
   after:release:
     - echo Successfully released ${name} v${version} to ${repo.repository}.
 git:
-  # Commits the local changes from yq, creates a tag, pushes the tag
   changelog: git log --pretty=format:"* %s (%h)" ${latestTag}...HEAD
   requireBranch: main
-  requireCleanWorkingDir: false
+  requireCleanWorkingDir: true
   requireUpstream: false
-  commit: false
-  commitMessage: "Release v${version}"
-  tag: false
-  push: false
-  # pushArgs: "origin ${version}"
-github:
-  release: true
-  releaseName: Release v${version}
-  tokenRef: GITHUB_TOKEN
-  assets:
-    - dist/*-${version}.tar.gz
+  commit: true
+  commitMessage: "[skip ci] Release v${version}"
+  tag: true
+  push: true
 plugins:
   "@release-it/conventional-changelog":
+    infile: CHANGELOG.md
     preset:
       name: conventionalcommits
       types:
@@ -54,7 +26,3 @@ plugins:
           section: Features
         - type: fix
           section: Fixes
-        - type: refactor
-          section: Refactors
-        - type: test
-          section: Test Case Changes
