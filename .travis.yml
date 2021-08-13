@@ -13,7 +13,7 @@ before_install:
 
 install:
   - npm install -g release-it
-  - npm install -g @release-it/conventional-changelog
+  - npm install -g https://github.com/ivandov/conventional-changelog
   - pip install ansible-core
   - sudo wget "https://github.com/mikefarah/yq/releases/download/v4.9.6/yq_linux_amd64" -O /usr/bin/yq
   - sudo chmod +x /usr/bin/yq
