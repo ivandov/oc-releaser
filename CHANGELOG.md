@@ -1,3 +1,10 @@
+### [0.2.1](https://github.com/ivandov/oc-releaser/compare/0.2.0...0.2.1) (2021-08-13)
+
+
+### CI Changes
+
+* moved git HEAD fix to setup script ([bc189ea](https://github.com/ivandov/oc-releaser/commit/bc189ea0aa16f04b5a4e8c4febb220111aa0c2ab))
+
 ## [0.2.0](https://github.com/ivandov/oc-releaser/compare/0.1.0...0.2.0) (2021-08-13)
 
 
