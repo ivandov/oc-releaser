@@ -1,4 +1,5 @@
 # OC Releaser
+[![Build Status](https://travis-ci.com/ivandov/oc-releaser.svg?branch=main)](https://travis-ci.com/ivandov/oc-releaser)
 
 An automated release utility for [Ansible Collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) with transferrable support to any git organization and repository. This release utility ensures standardized release processes across multiple teams or individuals.
 
