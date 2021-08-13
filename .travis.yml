@@ -1,8 +1,8 @@
 language: python
 
-branches:
-  only:
-  - main
+# branches:
+#   only:
+#   - main
 
 env:
   - NODE_VERSION="12"
