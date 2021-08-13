@@ -2,7 +2,7 @@
 
 An automated release utility for [Ansible Collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) with transferrable support to any git organization and repository. This release utility ensures standardized release processes across multiple teams or individuals.
 
-Versioning is handled via conformance to [`conventionalcommits`](https://www.conventionalcommits.org). See [#versioning].
+Versioning is handled via conformance to [`conventionalcommits`](https://www.conventionalcommits.org). See [versioning](#versioning).
 
 ## Usage
 
