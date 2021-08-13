@@ -3,7 +3,7 @@ hooks:
     - echo Successfully released ${name} v${version} to ${repo.repository}.
 git:
   changelog: git log --pretty=format:"* %s (%h)" ${latestTag}...HEAD
-  # requireBranch: main
+  requireBranch: main
   requireCleanWorkingDir: true
   requireUpstream: false
   commit: true
