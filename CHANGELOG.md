@@ -1,3 +1,15 @@
+## [0.2.0](https://github.com/ivandov/oc-releaser/compare/0.1.0...0.2.0) (2021-08-13)
+
+
+### Features
+
+* Move install steps to script for external use ([2b9faf9](https://github.com/ivandov/oc-releaser/commit/2b9faf915d02410fd14e1204ad68a91e862caee1))
+
+
+### Fixes
+
+* use sudo for yq install ([7baf0cc](https://github.com/ivandov/oc-releaser/commit/7baf0cc9580fca3aecd2ae7b29fcaee8024816c8))
+
 ## 0.1.0 (2021-08-13)
 
 
