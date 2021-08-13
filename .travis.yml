@@ -12,10 +12,7 @@ before_install:
   - nvm install $NODE_VERSION
 
 install:
-  - ./install_prereqs.sh
+  - ./scripts/setup_travis.sh
 
 script:
-  - git remote rm origin
-  - git remote add origin https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
-  - git symbolic-ref HEAD "refs/heads/${TRAVIS_BRANCH}"
   - release-it
