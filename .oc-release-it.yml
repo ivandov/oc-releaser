@@ -17,7 +17,6 @@ hooks:
     - git tag ${version} -f
     - git commit -am "Release v${version}"
     - git push origin ${version} -f
-    - echo "Using GITHUB_TOKEN ${process.env.GITHUB_TOKEN}"
   after:github:release:
     - echo Resetting local tag commit created by release-it
     - git reset --hard HEAD~1
