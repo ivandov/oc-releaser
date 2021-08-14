@@ -1,3 +1,5 @@
+### [0.2.2](https://github.com/ivandov/oc-releaser/compare/0.2.1...0.2.2) (2021-08-14)
+
 ### [0.2.1](https://github.com/ivandov/oc-releaser/compare/0.2.0...0.2.1) (2021-08-13)
 
 
